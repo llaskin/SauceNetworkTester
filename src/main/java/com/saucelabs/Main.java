@@ -7,7 +7,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -66,7 +68,7 @@ public class Main {
         String sauceDataCenter = cmd.getOptionValue("datacenter");
 
 
-        test_endpoint("ondemand.saucelabs.com");
+//        test_endpoint("ondemand.saucelabs.com");
         test_endpoint("eu1.appium.testobject.com");
         test_endpoint("us1.appium.testobject.com");
 
@@ -182,7 +184,10 @@ public class Main {
             conn.setReadTimeout(5000);
             conn.setConnectTimeout(5000);
 
-            String alive = conn.getContent().toString();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    conn.getInputStream()));
+
+            String alive = reader.readLine().toString();
             if (alive.contains("OK,ondemand alive")) {
                 System.out.println("OK, Desktop cloud connectable");
             } else {
@@ -271,7 +276,10 @@ public class Main {
             conn.setReadTimeout(5000);
             conn.setConnectTimeout(5000);
 
-            String resp = conn.getContent().toString();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    conn.getInputStream()));
+
+            String resp = reader.readLine().toString();
             if (resp.contains("Basic service status checks passed.")) {
                 System.out.println("OK, Sauce Labs Desktop API endpoint connectable");
             } else {
