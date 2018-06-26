@@ -1,7 +1,9 @@
 # SauceNetworkTester
 
+The Sauce Network Tester tests your network for connectivity to the Sauce Labs cloud.  It will let you know if you need to update or fix proxy settings prior to first use of Sauce Labs.  
+
 1. Dependencies
-    * Install JDK 1.8 and/or a Java Runtime Environment
+    * Install a Java Runtime Environment
 
 2. Sauce Labs Credentials
     * In the terminal, export your Sauce Labs credentials as environmental variables.  This step is optional but is
