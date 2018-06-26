@@ -20,5 +20,5 @@ java -jar SauceNetworkTester.jar -d <us|eu> -u SAUCE_USERNAME -a $SAUCE_ACCESS_K
 
 ### Resources
 ##### [Sauce Labs Documentation](https://wiki.saucelabs.com/)
-##### [Sauce Labs Firewall and Proxy configuration Info](https://wiki.saucelabs.com/display/DOCS/Setting+Up+Sauce+Connect+Proxy)
+##### [Sauce Labs Firewall and Proxy Configuration Info](https://wiki.saucelabs.com/display/DOCS/Setting+Up+Sauce+Connect+Proxy)
 
