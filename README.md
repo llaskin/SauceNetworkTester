@@ -1,5 +1,7 @@
 # SauceNetworkTester
 
+The Sauce Network Tester tests your network for connectivity to the Sauce Labs cloud.  It will let you know if you need to update or fix proxy settings prior to first use of Sauce Labs.  
+
 1. Dependencies
     * Install a Java Runtime Environment
 
