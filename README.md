@@ -15,7 +15,7 @@
 ### Running Connectability Test
 ```
 cd out/artifacts/SauceNetworkTester_jar
-java -jar SauceNetworkTester.jar -d <us|eu> -u $SAUCE_USERNAEM -a $SAUCE_ACCESS_KEY -t $TESTOBJECT_API_KEY
+java -jar SauceNetworkTester.jar -d <us|eu> -u SAUCE_USERNAME -a $SAUCE_ACCESS_KEY -t $TESTOBJECT_API_KEY
 ```
 
 ### Resources
