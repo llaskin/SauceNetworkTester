@@ -11,6 +11,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -103,6 +104,7 @@ public class Main {
         else {
             System.out.println("Skiping RDC, no valid RDC api key defined");
         }
+        getDNSInfo();
         //test ranges to make sure they are accessible
 //        test_ranges();
 
@@ -344,6 +346,13 @@ public class Main {
             System.out.println("Ran successful test on RDC with SessionID" + (((RemoteWebDriver) driver).getSessionId()).toString());
 
             driver.quit();
+        }
+    }
+    private static void getDNSInfo(){
+        System.out.println("Here are the DNS servers that we use for config");
+        List nameservers = sun.net.dns.ResolverConfiguration.open().nameservers();
+        for(Object dns : nameservers){
+            System.out.println("DNS Connected through: " + dns + " ");
         }
     }
 
